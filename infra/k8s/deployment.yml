@@ -19,4 +19,7 @@ spec:
         - containerPort: 3000
         env:
         - name: SHARE
-          value: "your_share"
+          valueFrom:
+            secretKeyRef:
+              name: tesior-secret
+              key: SHARE

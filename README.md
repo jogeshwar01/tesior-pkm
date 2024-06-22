@@ -15,7 +15,14 @@ kubectl apply -f deployment.yml
 kubectl apply -f service.yml
 ```
 
-2. Access
+2. Add ENV_VARIABLES to secret.yml
+
+```
+echo -n 'your_secret_data' | base64
+Put these values with corresponding keys in secret.yml
+```
+
+3. Access
 
 ```
 kubectl get nodes --owide            // Get node internal IP
