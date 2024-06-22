@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tesior-pkm-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: tesior-pkm
+  template:
+    metadata:
+      labels:
+        app: tesior-pkm
+    spec:
+      containers:
+      - name: tesior-pkm
+        image: jogeshwar01/tesior-pkm
+        ports:
+        - containerPort: 3000
+        env:
+        - name: SHARE
+          value: "your_share"
